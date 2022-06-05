@@ -123,46 +123,45 @@ impl GameState {
         }
 
         self.open(x, y).unwrap();
-        // self.recursive_open(x, y);
+        self.recursive_open(x, y);
 
         Ok(())
     }
 
-    // fn recursive_open(&mut self, x: usize, y: usize) {
-    //     let nof_mines_around = self.count_mines_around(x, y);
+    fn recursive_open(&mut self, x: usize, y: usize) {
+        let nof_mines_around = self.count_mines_around(x, y);
 
-    //     if nof_mines_around > 0 {
-    //         self.open(x, y).unwrap();
-    //         return;
-    //     }
+        if nof_mines_around > 0 {
+            self.open(x, y).unwrap();
+            return;
+        }
 
-    //     if self.has_mine(x, y) {
-    //         return;
-    //     }
+        if self.has_mine(x, y) {
+            return;
+        }
 
-    //     if self.is_flagged(x, y) {
-    //         return;
-    //     }
+        if self.is_flagged(x, y) {
+            return;
+        }
 
-    //     self.open(x, y).unwrap();
+        self.open(x, y).unwrap();
 
-    //     if x > 0 && self.is_in_range(x - 1, y).is_ok() && !self.is_opened(x - 1, y) {
-    //         self.recursive_open(x - 1, y);
-    //     }
+        if x > 0 && self.is_in_range(x - 1, y).is_ok() && !self.is_opened(x - 1, y) {
+            self.recursive_open(x - 1, y);
+        }
 
-    //     if y > 0 && self.is_in_range(x, y - 1).is_ok() && !self.is_opened(x, y - 1) {
-    //         self.recursive_open(x, y - 1);
-    //     }
+        if y > 0 && self.is_in_range(x, y - 1).is_ok() && !self.is_opened(x, y - 1) {
+            self.recursive_open(x, y - 1);
+        }
 
-    //     if self.is_in_range(x + 1, y).is_ok() && !self.is_opened(x + 1, y) {
-    //         self.recursive_open(x + 1, y);
-    //     }
+        if self.is_in_range(x + 1, y).is_ok() && !self.is_opened(x + 1, y) {
+            self.recursive_open(x + 1, y);
+        }
 
-    //     if self.is_in_range(x, y + 1).is_ok() && !self.is_opened(x, y + 1) {
-    //         self.recursive_open(x, y + 1);
-    //     }
-
-    // }
+        if self.is_in_range(x, y + 1).is_ok() && !self.is_opened(x, y + 1) {
+            self.recursive_open(x, y + 1);
+        }
+    }
 
     pub fn mines_left(&self) -> usize {
         self.mines.len() - self.flags.len()
