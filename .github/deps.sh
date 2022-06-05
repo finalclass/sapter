@@ -1,3 +1,3 @@
 #!/bin/sh
 
-apt-get install libx11-dev
+apk add libx11-dev
