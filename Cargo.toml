@@ -8,3 +8,6 @@ edition = "2021"
 [dependencies]
 rand = "0.8.5"
 ruscii = "0.3.2"
+
+[target.'cfg(unix)'.dependencies]
+x11 = "2.19.1"
