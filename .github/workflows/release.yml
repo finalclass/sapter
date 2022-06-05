@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Add dependencies
-        run: apt install libx11-dev
+        run: sudo apt-get install libx11-dev
         id: deps
       - name: Compile and release
         uses: rust-build/rust-build.action@v1.3.2
