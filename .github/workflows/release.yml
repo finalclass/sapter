@@ -15,7 +15,7 @@ jobs:
       - name: Compile and release
         uses: rust-build/rust-build.action@v1.3.2
         env:
-          PRE_BUILD: apk add --no-cache pkg-config libx11-dev
+          PRE_BUILD: .github/deps.sh
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           RUSTTARGET: ${{ matrix.target }}
