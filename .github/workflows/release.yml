@@ -12,12 +12,10 @@ jobs:
         target: [x86_64-pc-windows-gnu, x86_64-unknown-linux-musl]
     steps:
       - uses: actions/checkout@master
-      - name: Add dependencies
-        run: sudo apt-get install libx11-dev
-        id: deps
       - name: Compile and release
         uses: rust-build/rust-build.action@v1.3.2
         env:
+          PRE_BUILD: apk add --no-cache pkg-config libx11-dev
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           RUSTTARGET: ${{ matrix.target }}
