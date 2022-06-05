@@ -5,14 +5,6 @@ _"Minesweeper is only wrong once"_
 Minesweeper written in Rust using [ruscii](https://github.com/lemunozm/ruscii) library.
 Written as an exercise while learning Rust.
 
-## Screenshot 1
-
-![Sapter 1](screenshot1.png)
-
-## Screenshot 2
-
-![Sapter 1](screenshot2.png)
-
 ## Building
 
 To build you need rustc compiler. Install rust according to instructions given here: https://www.rust-lang.org/learn/get-started
@@ -41,3 +33,12 @@ BACKSPACE - Flag field
 Q or ESC - quit  
 R - resurect  
 N - new game  
+
+## Screenshot 1
+
+![Sapter 1](screenshot1.png)
+
+## Screenshot 2
+
+![Sapter 1](screenshot2.png)
+
