@@ -5,9 +5,12 @@ _"Minesweeper is only wrong once"_
 Minesweeper written in Rust using [ruscii](https://github.com/lemunozm/ruscii) library.
 Written as an exercise while learning Rust.
 
-## Screenshots
+## Screenshot 1
 
 ![Sapter 1](screenshot1.png)
+
+## Screenshot 2
+
 ![Sapter 1](screenshot2.png)
 
 ## Building
