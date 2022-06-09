@@ -1,5 +1,7 @@
 [package]
 name = "sapter"
+description = "Minesweeper for terminals"
+license = "MIT"
 version = "0.1.13"
 edition = "2021"
 
